@@ -1,64 +1,84 @@
-import { header, nav, main, footer } from "./components";
+import { Header, Nav, Main, Footer } from "./components";
+import * as state from "./store";
+import Navigo from "navigo";
+import { capitalize } from "lodash";
+import axios from "axios";
 
-import * as state from "./stores";
+const router = new Navigo(window.location.origin);
 
-function render(st) {
+router
+  .on({
+    ":page": (params) => render(state[capitalize(params.page)]),
+    "/": () => render(state.Home),
+  })
+  .resolve();
+
+axios
+  .get("https://jsonplaceholder.typicode.com/posts")
+  .then((response) => {
+    console.log("response.data", response.data);
+    response.data.forEach((post) => {
+      state.Blog.posts.push(post);
+    });
+    const params = router.lastRouteResolved().params;
+    console.log(params);
+    if (params) {
+      render(state[params.page]);
+    }
+  })
+  .catch((err) => console.log(err));
+
+function render(st = state.Home) {
+  // console.log("rendering state", st);
+  // console.log("state.Blog", state.Blog);
   document.querySelector("#root").innerHTML = `
-    ${header(st)}
-    ${nav(state.Links)}
-    ${main(st)}
-    ${footer()}
-    `;
-  addPicOnFormSubmit();
-  addNavToggle();
+  ${Header(st)}
+  ${Nav(state.Links)}
+  ${Main(st)}
+  ${Footer()}
+`;
+
+  router.updatePageLinks();
+
   addNavEventListeners();
+  addPicOnFormSubmit(st);
 }
-render(state.home);
 
 function addNavEventListeners() {
-  document.querySelectorAll("nav a").forEach(navLink => {
-    navLink.addEventListener("click", event => {
-      event.preventDefault();
-      render(state[event.target.textContent]);
-    });
-  });
+  // add menu toggle to bars icon in nav bar
+  document
+    .querySelector(".fa-bars")
+    .addEventListener("click", () =>
+      document.querySelector("nav > ul").classList.toggle("hidden--mobile")
+    );
 }
 
-// populating gallery with pictures
-const gallerySection = document.querySelector("#gallery");
-dogPictures.forEach(pic => {
-  let img = document.createElement("img");
-  img.src = pic.url;
-  img.alt = pic.title;
-  gallerySection.appendChild(img);
-});
+function addPicOnFormSubmit(st) {
+  if (st.view === "Form") {
+    document.querySelector("form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      // convert HTML elements to Array
+      let inputList = Array.from(event.target.elements);
+      // remove submit button from list
+      inputList.pop();
+      // construct new picture object
+      let newPic = inputList.reduce((pictureObject, input) => {
+        pictureObject[input.name] = input.value;
+        return pictureObject;
+      }, {});
+      // add new picture to state.Gallery.pictures
+      state.Gallery.pictures.push(newPic);
+      render(state.Gallery);
+    });
+  }
+}
 
 // handle form submission
-document.querySelector("form").addEventListener("submit", event => {
+document.querySelector("form").addEventListener("submit", (event) => {
   event.preventDefault();
-  Array.from(event.target.elements).forEach(el => {
+  Array.from(event.target.elements).forEach((el) => {
     console.log("Input Type: ", el.type);
     console.log("Name: ", el.name);
     console.log("Value: ", el.value);
   });
 });
-
-function addNavToggle() {
-  // add menu toggle to bars icon in nav bar
-  document.querySelector(".fa-bars").addEventListener("click", () => {
-    document.querySelector("nav > ul").classList.toggle("hidden--mobile");
-  });
-}
-
-function addPicOnFormSubmit() {
-  document.querySelector("form").addEventListener("submit", event => {
-    event.preventDefault();
-    let inputs = event.target.elements;
-    let newPic = {
-      url: inputs[0].value,
-      title: inputs[1].value
-    };
-    state.gallery.pictures.push(newPic);
-    render(state.gallery);
-  });
-}

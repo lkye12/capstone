@@ -1,2 +1,9 @@
-export {default as home} from "./home";
-export {default as boi} from "./bio";
+export { default as Home } from "./Home";
+export { default as Links } from "./Links";
+export { default as About } from "./About";
+export { default as Skills } from "./Skills";
+export { default as NASA } from "./NASA";
+export { default as Gallery } from "./Gallery";
+export { default as Register } from "./Register";
+export { default as Login } from "./Login";
+export { default as Upload } from "./Upload";

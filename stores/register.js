@@ -1,4 +1,4 @@
 export default {
-    header: "About me",
-    page: "bio"
+  header: "Register",
+  page: "Register",
 };

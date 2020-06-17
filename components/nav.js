@@ -1,20 +1,14 @@
-import React from 'react';
-import './style.css';
-import {Link} from 'react-router-dom';
-
-function Nav() {
-  return (
-    <nav>
-      <h3>Logo</h3>
-    <ul classname='nav-link'>
-      <link to="/about">
-      <li>about</link>
-      <li>me</li>
-      </link>
-      </ul></nav>
-  )
-  }
-
-export default links => `
-${links.map(link => `<li><a href="#">${link}</a></li>`).join("")}
+export default (links) => `
+<nav id="nav">
+  <i class="fas fa-bars"></i>
+  <ul class="nav-bar">
+  ${links.reduce(
+    (html, link) =>
+      html +
+      `<li><a href="/${link.title !== "Home" ? link.title : ""}" title="${
+        link.title
+      }" data-navigo>${link.text}</a></li>`
+  )}
+  </ul>
+</nav>
 `;
