@@ -3,8 +3,8 @@ export default {
   view: "Gallery",
   pictures: [
     {
-      url:
-        "./img/portfolio/g1.svg",
-      title: "space"
+      url: "./img/portfolio/g1.svg",
+      title: "space",
     },
-  ]
+  ],
+};
