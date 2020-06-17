@@ -114,10 +114,9 @@ float: left;
   height: auto;
   margin-right: 2rem;
 }
-@media (min-width: 550px){
-  #About {
+#About {
     height: 60vh;
-  }
+}
 #bio {
   margin: 1rem;
 }
