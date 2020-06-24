@@ -1,4 +1,4 @@
-export default () => `
+export default (st) => `
 <section id="Login">
 <div class="container">
     <form action="" method="POST">
