@@ -1,8 +1,5 @@
 import * as views from "./views";
 
-export default (st) => {
-  console.log(st);
-  return `
-${views[st.page](st)}
+export default st => `
+${views[st.view](st)}
 `;
-};
