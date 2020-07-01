@@ -172,8 +172,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default(st) {
-  return "\n<section id=\"bio\" class= \"section-clear\">\n<div id=\"wrap\">\n  <h2>Vivamus ac justo eu nisi</h2>\n  <p>".concat(st.paragraph, " SOMETHING ELSE</p>\n  <p>Etiam egestas consectetur gravida. Nulla mollis suscipit sapien sed fermentum. Integer vitae eros a magna vulputate aliquam. Suspendisse sed pulvinar augue, auctor mollis lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis eleifend diam quis libero sollicitudin efficitur. Nullam sapien eros, tempor eget vulputate ut, interdum vel orci. Donec sit amet tempor mi. Nam feugiat cursus egestas. Suspendisse eget orci et ex mattis ornare tempor non tellus. Suspendisse gravida neque in urna congue bibendum. Duis dui odio, pharetra nec odio ac, ornare vulputate nibh.</p>\n  </div>\n</section>\n");
-};
+  return "\n<section id=\"about\" class= \"section-clear\">\n<div class=\"container\">\n<div id=\"wrap\">\n  <h2>Hi!</h2>\n  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, quaerat ipsum fuga et nostrum molestiae veritatis corporis dignissimos, quam sed voluptate quas dolore alias. Alias optio aspernatur quasi modi nam.</p>\n  <p>Etiam egestas consectetur gravida. Nulla mollis suscipit sapien sed fermentum. Integer vitae eros a magna vulputate aliquam. Suspendisse sed pulvinar augue, auctor mollis lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis eleifend diam quis libero sollicitudin efficitur. Nullam sapien eros, tempor eget vulputate ut, interdum vel orci. Donec sit amet tempor mi. Nam feugiat cursus egestas. Suspendisse eget orci et ex mattis ornare tempor non tellus. Suspendisse gravida neque in urna congue bibendum. Duis dui odio, pharetra nec odio ac, ornare vulputate nibh.</p>\n  </div>\n  </div>\n</section>\n";
+}; //${st.paragraph}
+
 
 exports.default = _default;
 },{}],"components/views/Gallery.js":[function(require,module,exports) {
@@ -19464,7 +19465,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default() {
-  return "\n<footer>\n  &copy; 2020 <a href=\"https://savvycoders.com/\">Savvy Coders</a>\n</footer>\n";
+  return "\n<footer>\n  &copy; 2020\n</footer>\n";
 };
 
 exports.default = _default;
@@ -19553,8 +19554,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _default = {
   header: "About Me",
-  view: "About",
-  paragraph: "Etiam egestas consectetur gravida. Nulla mollis suscipit sapien sed fermentum. Integer vitae eros a magna vulputate aliquam. Suspendisse sed pulvinar augue, auctor mollis lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis eleifend diam quis libero sollicitudin efficitur. Nullam sapien eros, tempor eget vulputate ut, interdum vel orci. Donec sit amet tempor mi. Nam feugiat cursus egestas. Suspendisse eget orci et ex mattis ornare tempor non tellus. Suspendisse gravida neque in urna congue bibendum. Duis dui odio, pharetra nec odio ac, ornare vulputate nibh."
+  view: "About" // paragraph:
+  //   "Etiam egestas consectetur gravida. Nulla mollis suscipit sapien sed fermentum. Integer vitae eros a magna vulputate aliquam. Suspendisse sed pulvinar augue, auctor mollis lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis eleifend diam quis libero sollicitudin efficitur. Nullam sapien eros, tempor eget vulputate ut, interdum vel orci. Donec sit amet tempor mi. Nam feugiat cursus egestas. Suspendisse eget orci et ex mattis ornare tempor non tellus. Suspendisse gravida neque in urna congue bibendum. Duis dui odio, pharetra nec odio ac, ornare vulputate nibh.",
+
 };
 exports.default = _default;
 },{}],"store/Gallery.js":[function(require,module,exports) {
@@ -21448,7 +21450,7 @@ router.on({
   }
 }).resolve();
 
-_axios.default.get("https://api.nasa.gov/planetary/apod?api_key=khPLpN5zqP9OgtH0du57shLWaAsMwrNf85j25sSw").then(function (response) {
+_axios.default.get("https://jsonplaceholder.typicode.com/posts").then(function (response) {
   console.log("response.data", response.data);
   response.data.forEach(function (post) {
     state.Blog.posts.push(post);
@@ -21527,7 +21529,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50880" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51960" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

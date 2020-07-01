@@ -1,5 +1,6 @@
+
 #jumbotron {
-  background: url(/background.09622968.svg) center center no-repeat;
+  background: url(https://raw.githubusercontent.com/lkye12/capstone/f5781e79e5193c83d42d2979474f484425511240/img/background.svg) center center no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -13,13 +14,7 @@
   text-align: center;
 }
 
-#jumbotron > a {
-  text-decoration: none;
-  background-color: white;
-  font-size: 1.5em;
-  padding: 1.5rem;
-  border-radius: 10px;
-}
+
 
 form {
   border: solid 1px black;
@@ -45,9 +40,7 @@ footer {
   clear: both;
 }
 
-#bio {
-  margin: 1rem;
-}
+
 
 #gallery {
   border: solid 1px black;
@@ -97,17 +90,17 @@ footer {
     list-style-type: none;
   }
 
-  #bio .wrap {
+  #about .wrap {
     margin-top: 90px;
   }
-  #bio {
-    background: url("/Bio.ef2ac25b.svg");
+  #about {
+    background: url("https://raw.githubusercontent.com/lkye12/capstone/f5781e79e5193c83d42d2979474f484425511240/img/Bio.svg");
     background-size: cover;
   }
-  #bio .clear {
+  #about .clear {
     clear: both;
   }
-  #bio .wrap {
+  #about .wrap {
     background-color: rgb(200, 200, 200);
     background-color: rgba(200, 200, 200, 0.5);
     border-radius: 20px;
@@ -115,6 +108,16 @@ footer {
     margin: 40px auto;
     width: 70%;
   }
+  #about .container{
+    max-width:1040px;
+    border:1px solid pink;
+    margin:0 auto;
+}
+#about{
+    border:1px solid black;
+    min-height: 500px;
+    background-color:coral
+}
   #gallery {
     display: flex;
     flex-direction: column;
@@ -126,6 +129,8 @@ body {
   margin: 0%;
   box-sizing: border-box;
   overflow-x: hidden;
+  background-color: gray;
+  text-decoration-color: coral;
 }
 /*end body*/
 
@@ -159,7 +164,7 @@ body {
 
   #nav .toggle-collapse .toggle-icons i {
     font-size: 1.4rem;
-    color: var(--text-gray);
+    color: var(--text-black);
   }
 
   .collapse {
@@ -184,7 +189,7 @@ body {
   }
 
   #nav .nav-bar li:hover a {
-    color: var(--white);
+
   }
 
   #nav .brand a {
@@ -203,11 +208,16 @@ body {
   }
 
   nav > ul > li {
-    display: inline-block;
+    display: flex;
     text-decoration: none;
-    border: 1px solid;
+    border: none;
     padding: 0.5rem 0.5rem;
     border-radius: 25px;
+    color: var(--white);
+  }
+  nav > ul > li:hover {
+    background-color: var(--midnight);
+
   }
 
   nav > .fa-bars {
@@ -218,12 +228,6 @@ body {
     margin-right: 3rem;
   }
 
-  #bio img {
-    float: left;
-    width: 25%;
-    height: auto;
-    margin-right: 1rem;
-  }
 
   #gallery {
     display: grid;
