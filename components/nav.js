@@ -5,9 +5,17 @@
 // }
 
 export default (links) => `
-<nav id="nav">
-  <i class="fas fa-bars"></i>
-  <ul class="hidden--mobile nav-links">
+<nav>
+  <div class="masthead active-element">
+    <h1><a href="#0">Lauren</a></h1>
+      <div id="menu-toggle" class="menu-toggle active-element">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        </div>
+                </div>
+                <div class="main-nav-list active-element">
+  <ul>
   ${links.reduce(
     (html, link) =>
       html +

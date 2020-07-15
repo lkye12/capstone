@@ -144,7 +144,7 @@ exports.default = void 0;
 //   return ""
 // }
 var _default = function _default(links) {
-  return "\n<nav id=\"nav\">\n  <i class=\"fas fa-bars\"></i>\n  <ul class=\"hidden--mobile nav-links\">\n  ".concat(links.reduce(function (html, link) {
+  return "\n<nav>\n  <div class=\"masthead active-element\">\n    <h1><a href=\"#0\">Lauren</a></h1>\n      <div id=\"menu-toggle\" class=\"menu-toggle active-element\">\n        <div class=\"one\"></div>\n        <div class=\"two\"></div>\n        <div class=\"three\"></div>\n        </div>\n                </div>\n                <div class=\"main-nav-list active-element\">\n  <ul>\n  ".concat(links.reduce(function (html, link) {
     return html + "<li><a href=\"/".concat(link.title !== "Home" ? link.title : "", "\" title=\"").concat(link.title, "\" data-navigo>").concat(link.text, "</a></li>");
   }, ""), "\n  </ul>\n</nav>\n");
 };
@@ -172,12 +172,12 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default(st) {
-  return "\n<section id=\"about\" class= \"section-clear\">\n<div class=\"container\">\n<div id=\"wrap\">\n  <h2>Hi!</h2>\n  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, quaerat ipsum fuga et nostrum molestiae veritatis corporis dignissimos, quam sed voluptate quas dolore alias. Alias optio aspernatur quasi modi nam.</p>\n  <p>Etiam egestas consectetur gravida. Nulla mollis suscipit sapien sed fermentum. Integer vitae eros a magna vulputate aliquam. Suspendisse sed pulvinar augue, auctor mollis lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis eleifend diam quis libero sollicitudin efficitur. Nullam sapien eros, tempor eget vulputate ut, interdum vel orci. Donec sit amet tempor mi. Nam feugiat cursus egestas. Suspendisse eget orci et ex mattis ornare tempor non tellus. Suspendisse gravida neque in urna congue bibendum. Duis dui odio, pharetra nec odio ac, ornare vulputate nibh.</p>\n  </div>\n  </div>\n</section>\n";
+  return "\n<section class=\"about-contents\">\n            <h2>About</h2>\n             <p>Hello!</p>\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum labore cumque, laborum, dolorem dolor doloribus iste qui omnis? Consequuntur sapiente mollitia iure quas. Rem nobis tenetur, est accusamus iste dolor, necessitatibus, facilis error ratione aliquid sequi voluptates dignissimos. Quidem, quam, rem? Molestias odio, perferendis dolores doloremque eum quo mollitia atque, sit inventore nisi accusamus magnam vitae temporibus maxime et in aliquam qui aliquid obcaecati alias unde repellat laudantium quam blanditiis. Blanditiis, earum itaque veritatis et numquam culpa, tempore magnam. Quas laborum voluptate id vero. Voluptatibus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nemo reprehenderit nostrum nesciunt, deleniti facere voluptas eligendi expedita dolor at praesentium sequi. Accusamus vitae ut necessitatibus aut, repudiandae voluptate! Excepturi quam explicabo quis illo, qui a ipsam sit atque non sed doloribus maiores in quo ut voluptatem neque animi, saepe facilis nemo et! Temporibus dolores deserunt illo cum aut saepe tenetur, odit velit ipsum beatae dolore illum accusantium alias ullam quas reiciendis! Quod at tenetur sint. Dolorum officia excepturi placeat, facere enim ullam, tempora accusantium culpa voluptates iusto non aperiam beatae ut laboriosam voluptatibus eum corrupti libero, laborum voluptas quasi at fugiat et vel? Eum.</p>\n</section>\n";
 }; //${st.paragraph}
 
 
 exports.default = _default;
-},{}],"components/views/Gallery.js":[function(require,module,exports) {
+},{}],"components/views/Game.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -186,13 +186,62 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default(st) {
-  return "\n<section>\n".concat(st.pictures.reduce(function (html, pic) {
-    return html + "<img src=\"".concat(pic.url, "\" alt=\"").concat(pic.title, "\">");
-  }, ""), "\n</section>\n");
+  return "\n<section>\n<div id=\"gradient\"></div>\n<div id=\"page\">\n  <div id=\"Message-Container\">\n    <div id=\"message\">\n      <h1>Congratulations!</h1>\n      <p>You are done.</p>\n      <p id=\"moves\"></p>\n      <input id=\"okBtn\" type=\"button\" onclick=\"toggleVisablity('Message-Container')\" value=\"Cool!\" />\n    </div>\n  </div>\n  <div id=\"menu\">\n    <div class=\"custom-select\">\n      <select id=\"diffSelect\">\n                <option value=\"10\">Easy</option>\n                <option value=\"15\">Medium</option>\n                <option value=\"25\">Hard</option>\n                <option value=\"38\">Extreme</option>\n            </select>\n    </div>\n    <input id=\"startMazeBtn\" type=\"button\" onclick=\"makeMaze()\" value=\"Start\" />\n  </div>\n  <div id=\"view\">\n    <div id=\"mazeContainer\">\n      <canvas id=\"mazeCanvas\" class=\"border\" height=\"1100\" width=\"1100\"></canvas>\n    </div>\n  </div>\n</div>\n</section>\n";
 };
 
 exports.default = _default;
-},{}],"components/views/Form.js":[function(require,module,exports) {
+},{}],"components/views/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Home", {
+  enumerable: true,
+  get: function () {
+    return _Home.default;
+  }
+});
+Object.defineProperty(exports, "About", {
+  enumerable: true,
+  get: function () {
+    return _About.default;
+  }
+});
+Object.defineProperty(exports, "Game", {
+  enumerable: true,
+  get: function () {
+    return _Game.default;
+  }
+});
+
+var _Home = _interopRequireDefault(require("./Home"));
+
+var _About = _interopRequireDefault(require("./About"));
+
+var _Game = _interopRequireDefault(require("./Game"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./Home":"components/views/Home.js","./About":"components/views/About.js","./Game":"components/views/Game.js"}],"components/Main.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var views = _interopRequireWildcard(require("./views"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var _default = function _default(st) {
+  return "\n".concat(views[st.view](st), "\n");
+};
+
+exports.default = _default;
+},{"./views":"components/views/index.js"}],"components/Footer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -201,10 +250,151 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default() {
-  return "\n<form id=\"register\" method=\"POST\" action=\"\">\n  <h2> Add a photo to the gallery!</h2>\n  <div>\n    <label for=\"url\">Photo URL:</label>\n    <input type=\"text\" name=\"url\" id=\"url\" placeholder=\"Enter Photo URL\" required>\n  </div>\n  <div>\n    <label for=\"title\">Photo Title/Description:</label>\n    <input type=\"text\" name=\"title\" id=\"title\" placeholder=\"Enter Photo Description\" required>\n  </div>\n  <input type=\"submit\" name=\"submit\" value=\"Submit Photo\">\n</form>\n";
+  return "\n<footer>\n  &copy; 2020\n</footer>\n";
 };
 
 exports.default = _default;
+},{}],"components/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Header", {
+  enumerable: true,
+  get: function () {
+    return _Header.default;
+  }
+});
+Object.defineProperty(exports, "Nav", {
+  enumerable: true,
+  get: function () {
+    return _Nav.default;
+  }
+});
+Object.defineProperty(exports, "Main", {
+  enumerable: true,
+  get: function () {
+    return _Main.default;
+  }
+});
+Object.defineProperty(exports, "Footer", {
+  enumerable: true,
+  get: function () {
+    return _Footer.default;
+  }
+});
+
+var _Header = _interopRequireDefault(require("./Header"));
+
+var _Nav = _interopRequireDefault(require("./Nav"));
+
+var _Main = _interopRequireDefault(require("./Main"));
+
+var _Footer = _interopRequireDefault(require("./Footer"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./Header":"components/Header.js","./Nav":"components/Nav.js","./Main":"components/Main.js","./Footer":"components/Footer.js"}],"store/Home.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  header: "Home",
+  view: "Home"
+};
+exports.default = _default;
+},{}],"store/Links.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = [{
+  title: "Home",
+  text: "Home"
+}, {
+  title: "About",
+  text: "About"
+}, {
+  title: "Game",
+  text: "Game"
+}];
+exports.default = _default;
+},{}],"store/About.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  header: "About Me",
+  view: "About" // paragraph:
+  //   "Etiam egestas consectetur gravida. Nulla mollis suscipit sapien sed fermentum. Integer vitae eros a magna vulputate aliquam. Suspendisse sed pulvinar augue, auctor mollis lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis eleifend diam quis libero sollicitudin efficitur. Nullam sapien eros, tempor eget vulputate ut, interdum vel orci. Donec sit amet tempor mi. Nam feugiat cursus egestas. Suspendisse eget orci et ex mattis ornare tempor non tellus. Suspendisse gravida neque in urna congue bibendum. Duis dui odio, pharetra nec odio ac, ornare vulputate nibh.",
+
+};
+exports.default = _default;
+},{}],"store/Game.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  header: "Game",
+  view: "Game"
+};
+exports.default = _default;
+},{}],"store/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Home", {
+  enumerable: true,
+  get: function () {
+    return _Home.default;
+  }
+});
+Object.defineProperty(exports, "Links", {
+  enumerable: true,
+  get: function () {
+    return _Links.default;
+  }
+});
+Object.defineProperty(exports, "About", {
+  enumerable: true,
+  get: function () {
+    return _About.default;
+  }
+});
+Object.defineProperty(exports, "Game", {
+  enumerable: true,
+  get: function () {
+    return _Game.default;
+  }
+});
+
+var _Home = _interopRequireDefault(require("./Home"));
+
+var _Links = _interopRequireDefault(require("./Links"));
+
+var _About = _interopRequireDefault(require("./About"));
+
+var _Game = _interopRequireDefault(require("./Game"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./Home":"store/Home.js","./Links":"store/Links.js","./About":"store/About.js","./Game":"store/Game.js"}],"node_modules/navigo/lib/navigo.min.js":[function(require,module,exports) {
+var define;
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):e.Navigo=t()}(this,function(){"use strict";var e="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function t(){return!("undefined"==typeof window||!window.history||!window.history.pushState)}function n(e,n,o){this.root=null,this._routes=[],this._useHash=n,this._hash=void 0===o?"#":o,this._paused=!1,this._destroyed=!1,this._lastRouteResolved=null,this._notFoundHandler=null,this._defaultHandler=null,this._usePushState=!n&&t(),this._onLocationChange=this._onLocationChange.bind(this),this._genericHooks=null,this._historyAPIUpdateMethod="pushState",e?this.root=n?e.replace(/\/$/,"/"+this._hash):e.replace(/\/$/,""):n&&(this.root=this._cLoc().split(this._hash)[0].replace(/\/$/,"/"+this._hash)),this._listen(),this.updatePageLinks()}function o(e){return e instanceof RegExp?e:e.replace(/\/+$/,"").replace(/^\/+/,"^/")}function i(e){return e.replace(/\/$/,"").split("/").length}function s(e,t){return i(t)-i(e)}function r(e,t){return function(e){return(arguments.length>1&&void 0!==arguments[1]?arguments[1]:[]).map(function(t){var i=function(e){var t=[];return{regexp:e instanceof RegExp?e:new RegExp(e.replace(n.PARAMETER_REGEXP,function(e,o,i){return t.push(i),n.REPLACE_VARIABLE_REGEXP}).replace(n.WILDCARD_REGEXP,n.REPLACE_WILDCARD)+n.FOLLOWED_BY_SLASH_REGEXP,n.MATCH_REGEXP_FLAGS),paramNames:t}}(o(t.route)),s=i.regexp,r=i.paramNames,a=e.replace(/^\/+/,"/").match(s),h=function(e,t){return 0===t.length?null:e?e.slice(1,e.length).reduce(function(e,n,o){return null===e&&(e={}),e[t[o]]=decodeURIComponent(n),e},null):null}(a,r);return!!a&&{match:a,route:t,params:h}}).filter(function(e){return e})}(e,t)[0]||!1}function a(e,t){var n=t.map(function(t){return""===t.route||"*"===t.route?e:e.split(new RegExp(t.route+"($|/)"))[0]}),i=o(e);return n.length>1?n.reduce(function(e,t){return e.length>t.length&&(e=t),e},n[0]):1===n.length?n[0]:i}function h(e,n,o){var i,s=function(e){return e.split(/\?(.*)?$/)[0]};return void 0===o&&(o="#"),t()&&!n?s(e).split(o)[0]:(i=e.split(o)).length>1?s(i[1]):s(i[0])}function u(t,n,o){if(n&&"object"===(void 0===n?"undefined":e(n))){if(n.before)return void n.before(function(){(!(arguments.length>0&&void 0!==arguments[0])||arguments[0])&&(t(),n.after&&n.after(o))},o);if(n.after)return t(),void(n.after&&n.after(o))}t()}return n.prototype={helpers:{match:r,root:a,clean:o,getOnlyURL:h},navigate:function(e,t){var n;return e=e||"",this._usePushState?(n=(n=(t?"":this._getRoot()+"/")+e.replace(/^\/+/,"/")).replace(/([^:])(\/{2,})/g,"$1/"),history[this._historyAPIUpdateMethod]({},"",n),this.resolve()):"undefined"!=typeof window&&(e=e.replace(new RegExp("^"+this._hash),""),window.location.href=window.location.href.replace(/#$/,"").replace(new RegExp(this._hash+".*$"),"")+this._hash+e),this},on:function(){for(var t=this,n=arguments.length,o=Array(n),i=0;i<n;i++)o[i]=arguments[i];if("function"==typeof o[0])this._defaultHandler={handler:o[0],hooks:o[1]};else if(o.length>=2)if("/"===o[0]){var r=o[1];"object"===e(o[1])&&(r=o[1].uses),this._defaultHandler={handler:r,hooks:o[2]}}else this._add(o[0],o[1],o[2]);else"object"===e(o[0])&&Object.keys(o[0]).sort(s).forEach(function(e){t.on(e,o[0][e])});return this},off:function(e){return null!==this._defaultHandler&&e===this._defaultHandler.handler?this._defaultHandler=null:null!==this._notFoundHandler&&e===this._notFoundHandler.handler&&(this._notFoundHandler=null),this._routes=this._routes.reduce(function(t,n){return n.handler!==e&&t.push(n),t},[]),this},notFound:function(e,t){return this._notFoundHandler={handler:e,hooks:t},this},resolve:function(e){var n,o,i=this,s=(e||this._cLoc()).replace(this._getRoot(),"");this._useHash&&(s=s.replace(new RegExp("^/"+this._hash),"/"));var a=function(e){return e.split(/\?(.*)?$/).slice(1).join("")}(e||this._cLoc()),l=h(s,this._useHash,this._hash);return!this._paused&&(this._lastRouteResolved&&l===this._lastRouteResolved.url&&a===this._lastRouteResolved.query?(this._lastRouteResolved.hooks&&this._lastRouteResolved.hooks.already&&this._lastRouteResolved.hooks.already(this._lastRouteResolved.params),!1):(o=r(l,this._routes))?(this._callLeave(),this._lastRouteResolved={url:l,query:a,hooks:o.route.hooks,params:o.params,name:o.route.name},n=o.route.handler,u(function(){u(function(){o.route.route instanceof RegExp?n.apply(void 0,o.match.slice(1,o.match.length)):n(o.params,a)},o.route.hooks,o.params,i._genericHooks)},this._genericHooks,o.params),o):this._defaultHandler&&(""===l||"/"===l||l===this._hash||function(e,n,o){if(t()&&!n)return!1;if(!e.match(o))return!1;var i=e.split(o);return i.length<2||""===i[1]}(l,this._useHash,this._hash))?(u(function(){u(function(){i._callLeave(),i._lastRouteResolved={url:l,query:a,hooks:i._defaultHandler.hooks},i._defaultHandler.handler(a)},i._defaultHandler.hooks)},this._genericHooks),!0):(this._notFoundHandler&&u(function(){u(function(){i._callLeave(),i._lastRouteResolved={url:l,query:a,hooks:i._notFoundHandler.hooks},i._notFoundHandler.handler(a)},i._notFoundHandler.hooks)},this._genericHooks),!1))},destroy:function(){this._routes=[],this._destroyed=!0,this._lastRouteResolved=null,this._genericHooks=null,clearTimeout(this._listeningInterval),"undefined"!=typeof window&&(window.removeEventListener("popstate",this._onLocationChange),window.removeEventListener("hashchange",this._onLocationChange))},updatePageLinks:function(){var e=this;"undefined"!=typeof document&&this._findLinks().forEach(function(t){t.hasListenerAttached||(t.addEventListener("click",function(n){if((n.ctrlKey||n.metaKey)&&"a"==n.target.tagName.toLowerCase())return!1;var o=e.getLinkPath(t);e._destroyed||(n.preventDefault(),e.navigate(o.replace(/\/+$/,"").replace(/^\/+/,"/")))}),t.hasListenerAttached=!0)})},generate:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=this._routes.reduce(function(n,o){var i;if(o.name===e)for(i in n=o.route,t)n=n.toString().replace(":"+i,t[i]);return n},"");return this._useHash?this._hash+n:n},link:function(e){return this._getRoot()+e},pause:function(){var e=!(arguments.length>0&&void 0!==arguments[0])||arguments[0];this._paused=e,this._historyAPIUpdateMethod=e?"replaceState":"pushState"},resume:function(){this.pause(!1)},historyAPIUpdateMethod:function(e){return void 0===e?this._historyAPIUpdateMethod:(this._historyAPIUpdateMethod=e,e)},disableIfAPINotAvailable:function(){t()||this.destroy()},lastRouteResolved:function(){return this._lastRouteResolved},getLinkPath:function(e){return e.getAttribute("href")},hooks:function(e){this._genericHooks=e},_add:function(t){var n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null,o=arguments.length>2&&void 0!==arguments[2]?arguments[2]:null;return"string"==typeof t&&(t=encodeURI(t)),this._routes.push("object"===(void 0===n?"undefined":e(n))?{route:t,handler:n.uses,name:n.as,hooks:o||n.hooks}:{route:t,handler:n,hooks:o}),this._add},_getRoot:function(){return null!==this.root?this.root:(this.root=a(this._cLoc().split("?")[0],this._routes),this.root)},_listen:function(){var e=this;if(this._usePushState)window.addEventListener("popstate",this._onLocationChange);else if("undefined"!=typeof window&&"onhashchange"in window)window.addEventListener("hashchange",this._onLocationChange);else{var t=this._cLoc(),n=void 0,o=void 0;(o=function(){n=e._cLoc(),t!==n&&(t=n,e.resolve()),e._listeningInterval=setTimeout(o,200)})()}},_cLoc:function(){return"undefined"!=typeof window?void 0!==window.__NAVIGO_WINDOW_LOCATION_MOCK__?window.__NAVIGO_WINDOW_LOCATION_MOCK__:o(window.location.href):""},_findLinks:function(){return[].slice.call(document.querySelectorAll("[data-navigo]"))},_onLocationChange:function(){this.resolve()},_callLeave:function(){var e=this._lastRouteResolved;e&&e.hooks&&e.hooks.leave&&e.hooks.leave(e.params)}},n.PARAMETER_REGEXP=/([:*])(\w+)/g,n.WILDCARD_REGEXP=/\*/g,n.REPLACE_VARIABLE_REGEXP="([^/]+)",n.REPLACE_WILDCARD="(?:.*)",n.FOLLOWED_BY_SLASH_REGEXP="(?:/$|$)",n.MATCH_REGEXP_FLAGS="",n});
+
+
 },{}],"node_modules/base64-js/index.js":[function(require,module,exports) {
 'use strict'
 
@@ -19362,303 +19552,7 @@ var define;
   }
 }.call(this));
 
-},{"buffer":"node_modules/buffer/index.js"}],"components/views/Blog.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _lodash = require("lodash");
-
-var _default = function _default(st) {
-  console.log("piece of state", st);
-  return "\n<section id=\"blog\">\n  ".concat(st.posts.map(function (post) {
-    return formatBlogPost(post);
-  }).join(""), "\n</section>\n");
-};
-
-exports.default = _default;
-
-function formatBlogPost(post) {
-  return "\n  <div class=\"blog-post\">\n    <h4>".concat((0, _lodash.capitalize)(post.title), " by User ").concat(post.userId, "</h4>\n    <p>").concat((0, _lodash.capitalize)(post.body), "</p>\n  </div>\n  ");
-} // const formatBlogPost = post => `
-//   <div class="blog-post">
-//     <h4>${capitalize(post.title)} by User ${post.userId}</h4>
-//     <p>${capitalize(post.body)}</p>
-//   </div>
-//   `;
-},{"lodash":"node_modules/lodash/lodash.js"}],"components/views/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "Home", {
-  enumerable: true,
-  get: function () {
-    return _Home.default;
-  }
-});
-Object.defineProperty(exports, "About", {
-  enumerable: true,
-  get: function () {
-    return _About.default;
-  }
-});
-Object.defineProperty(exports, "Gallery", {
-  enumerable: true,
-  get: function () {
-    return _Gallery.default;
-  }
-});
-Object.defineProperty(exports, "Form", {
-  enumerable: true,
-  get: function () {
-    return _Form.default;
-  }
-});
-Object.defineProperty(exports, "Blog", {
-  enumerable: true,
-  get: function () {
-    return _Blog.default;
-  }
-});
-
-var _Home = _interopRequireDefault(require("./Home"));
-
-var _About = _interopRequireDefault(require("./About"));
-
-var _Gallery = _interopRequireDefault(require("./Gallery"));
-
-var _Form = _interopRequireDefault(require("./Form"));
-
-var _Blog = _interopRequireDefault(require("./Blog"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Home":"components/views/Home.js","./About":"components/views/About.js","./Gallery":"components/views/Gallery.js","./Form":"components/views/Form.js","./Blog":"components/views/Blog.js"}],"components/Main.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var views = _interopRequireWildcard(require("./views"));
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-var _default = function _default(st) {
-  return "\n".concat(views[st.view](st), "\n");
-};
-
-exports.default = _default;
-},{"./views":"components/views/index.js"}],"components/Footer.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _default = function _default() {
-  return "\n<footer>\n  &copy; 2020\n</footer>\n";
-};
-
-exports.default = _default;
-},{}],"components/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "Header", {
-  enumerable: true,
-  get: function () {
-    return _Header.default;
-  }
-});
-Object.defineProperty(exports, "Nav", {
-  enumerable: true,
-  get: function () {
-    return _Nav.default;
-  }
-});
-Object.defineProperty(exports, "Main", {
-  enumerable: true,
-  get: function () {
-    return _Main.default;
-  }
-});
-Object.defineProperty(exports, "Footer", {
-  enumerable: true,
-  get: function () {
-    return _Footer.default;
-  }
-});
-
-var _Header = _interopRequireDefault(require("./Header"));
-
-var _Nav = _interopRequireDefault(require("./Nav"));
-
-var _Main = _interopRequireDefault(require("./Main"));
-
-var _Footer = _interopRequireDefault(require("./Footer"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Header":"components/Header.js","./Nav":"components/Nav.js","./Main":"components/Main.js","./Footer":"components/Footer.js"}],"store/Home.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  header: "Home",
-  view: "Home"
-};
-exports.default = _default;
-},{}],"store/Links.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = [{
-  title: "Home",
-  text: "Home"
-}, {
-  title: "About",
-  text: "About"
-}, {
-  title: "Blog",
-  text: "Blog"
-}, {
-  title: "Gallery",
-  text: "Gallery"
-}, {
-  title: "Form",
-  text: "Submit A Photo"
-}];
-exports.default = _default;
-},{}],"store/About.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  header: "About Me",
-  view: "About" // paragraph:
-  //   "Etiam egestas consectetur gravida. Nulla mollis suscipit sapien sed fermentum. Integer vitae eros a magna vulputate aliquam. Suspendisse sed pulvinar augue, auctor mollis lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis eleifend diam quis libero sollicitudin efficitur. Nullam sapien eros, tempor eget vulputate ut, interdum vel orci. Donec sit amet tempor mi. Nam feugiat cursus egestas. Suspendisse eget orci et ex mattis ornare tempor non tellus. Suspendisse gravida neque in urna congue bibendum. Duis dui odio, pharetra nec odio ac, ornare vulputate nibh.",
-
-};
-exports.default = _default;
-},{}],"store/Gallery.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  header: "Gallery",
-  view: "Gallery",
-  pictures: []
-};
-exports.default = _default;
-},{}],"store/Form.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  header: "Add A Photo",
-  view: "Form"
-};
-exports.default = _default;
-},{}],"store/Blog.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  view: "Blog",
-  header: "My Blog",
-  posts: []
-};
-exports.default = _default;
-},{}],"store/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "Home", {
-  enumerable: true,
-  get: function () {
-    return _Home.default;
-  }
-});
-Object.defineProperty(exports, "Links", {
-  enumerable: true,
-  get: function () {
-    return _Links.default;
-  }
-});
-Object.defineProperty(exports, "About", {
-  enumerable: true,
-  get: function () {
-    return _About.default;
-  }
-});
-Object.defineProperty(exports, "Gallery", {
-  enumerable: true,
-  get: function () {
-    return _Gallery.default;
-  }
-});
-Object.defineProperty(exports, "Form", {
-  enumerable: true,
-  get: function () {
-    return _Form.default;
-  }
-});
-Object.defineProperty(exports, "Blog", {
-  enumerable: true,
-  get: function () {
-    return _Blog.default;
-  }
-});
-
-var _Home = _interopRequireDefault(require("./Home"));
-
-var _Links = _interopRequireDefault(require("./Links"));
-
-var _About = _interopRequireDefault(require("./About"));
-
-var _Gallery = _interopRequireDefault(require("./Gallery"));
-
-var _Form = _interopRequireDefault(require("./Form"));
-
-var _Blog = _interopRequireDefault(require("./Blog"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Home":"store/Home.js","./Links":"store/Links.js","./About":"store/About.js","./Gallery":"store/Gallery.js","./Form":"store/Form.js","./Blog":"store/Blog.js"}],"node_modules/navigo/lib/navigo.min.js":[function(require,module,exports) {
-var define;
-!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):e.Navigo=t()}(this,function(){"use strict";var e="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function t(){return!("undefined"==typeof window||!window.history||!window.history.pushState)}function n(e,n,o){this.root=null,this._routes=[],this._useHash=n,this._hash=void 0===o?"#":o,this._paused=!1,this._destroyed=!1,this._lastRouteResolved=null,this._notFoundHandler=null,this._defaultHandler=null,this._usePushState=!n&&t(),this._onLocationChange=this._onLocationChange.bind(this),this._genericHooks=null,this._historyAPIUpdateMethod="pushState",e?this.root=n?e.replace(/\/$/,"/"+this._hash):e.replace(/\/$/,""):n&&(this.root=this._cLoc().split(this._hash)[0].replace(/\/$/,"/"+this._hash)),this._listen(),this.updatePageLinks()}function o(e){return e instanceof RegExp?e:e.replace(/\/+$/,"").replace(/^\/+/,"^/")}function i(e){return e.replace(/\/$/,"").split("/").length}function s(e,t){return i(t)-i(e)}function r(e,t){return function(e){return(arguments.length>1&&void 0!==arguments[1]?arguments[1]:[]).map(function(t){var i=function(e){var t=[];return{regexp:e instanceof RegExp?e:new RegExp(e.replace(n.PARAMETER_REGEXP,function(e,o,i){return t.push(i),n.REPLACE_VARIABLE_REGEXP}).replace(n.WILDCARD_REGEXP,n.REPLACE_WILDCARD)+n.FOLLOWED_BY_SLASH_REGEXP,n.MATCH_REGEXP_FLAGS),paramNames:t}}(o(t.route)),s=i.regexp,r=i.paramNames,a=e.replace(/^\/+/,"/").match(s),h=function(e,t){return 0===t.length?null:e?e.slice(1,e.length).reduce(function(e,n,o){return null===e&&(e={}),e[t[o]]=decodeURIComponent(n),e},null):null}(a,r);return!!a&&{match:a,route:t,params:h}}).filter(function(e){return e})}(e,t)[0]||!1}function a(e,t){var n=t.map(function(t){return""===t.route||"*"===t.route?e:e.split(new RegExp(t.route+"($|/)"))[0]}),i=o(e);return n.length>1?n.reduce(function(e,t){return e.length>t.length&&(e=t),e},n[0]):1===n.length?n[0]:i}function h(e,n,o){var i,s=function(e){return e.split(/\?(.*)?$/)[0]};return void 0===o&&(o="#"),t()&&!n?s(e).split(o)[0]:(i=e.split(o)).length>1?s(i[1]):s(i[0])}function u(t,n,o){if(n&&"object"===(void 0===n?"undefined":e(n))){if(n.before)return void n.before(function(){(!(arguments.length>0&&void 0!==arguments[0])||arguments[0])&&(t(),n.after&&n.after(o))},o);if(n.after)return t(),void(n.after&&n.after(o))}t()}return n.prototype={helpers:{match:r,root:a,clean:o,getOnlyURL:h},navigate:function(e,t){var n;return e=e||"",this._usePushState?(n=(n=(t?"":this._getRoot()+"/")+e.replace(/^\/+/,"/")).replace(/([^:])(\/{2,})/g,"$1/"),history[this._historyAPIUpdateMethod]({},"",n),this.resolve()):"undefined"!=typeof window&&(e=e.replace(new RegExp("^"+this._hash),""),window.location.href=window.location.href.replace(/#$/,"").replace(new RegExp(this._hash+".*$"),"")+this._hash+e),this},on:function(){for(var t=this,n=arguments.length,o=Array(n),i=0;i<n;i++)o[i]=arguments[i];if("function"==typeof o[0])this._defaultHandler={handler:o[0],hooks:o[1]};else if(o.length>=2)if("/"===o[0]){var r=o[1];"object"===e(o[1])&&(r=o[1].uses),this._defaultHandler={handler:r,hooks:o[2]}}else this._add(o[0],o[1],o[2]);else"object"===e(o[0])&&Object.keys(o[0]).sort(s).forEach(function(e){t.on(e,o[0][e])});return this},off:function(e){return null!==this._defaultHandler&&e===this._defaultHandler.handler?this._defaultHandler=null:null!==this._notFoundHandler&&e===this._notFoundHandler.handler&&(this._notFoundHandler=null),this._routes=this._routes.reduce(function(t,n){return n.handler!==e&&t.push(n),t},[]),this},notFound:function(e,t){return this._notFoundHandler={handler:e,hooks:t},this},resolve:function(e){var n,o,i=this,s=(e||this._cLoc()).replace(this._getRoot(),"");this._useHash&&(s=s.replace(new RegExp("^/"+this._hash),"/"));var a=function(e){return e.split(/\?(.*)?$/).slice(1).join("")}(e||this._cLoc()),l=h(s,this._useHash,this._hash);return!this._paused&&(this._lastRouteResolved&&l===this._lastRouteResolved.url&&a===this._lastRouteResolved.query?(this._lastRouteResolved.hooks&&this._lastRouteResolved.hooks.already&&this._lastRouteResolved.hooks.already(this._lastRouteResolved.params),!1):(o=r(l,this._routes))?(this._callLeave(),this._lastRouteResolved={url:l,query:a,hooks:o.route.hooks,params:o.params,name:o.route.name},n=o.route.handler,u(function(){u(function(){o.route.route instanceof RegExp?n.apply(void 0,o.match.slice(1,o.match.length)):n(o.params,a)},o.route.hooks,o.params,i._genericHooks)},this._genericHooks,o.params),o):this._defaultHandler&&(""===l||"/"===l||l===this._hash||function(e,n,o){if(t()&&!n)return!1;if(!e.match(o))return!1;var i=e.split(o);return i.length<2||""===i[1]}(l,this._useHash,this._hash))?(u(function(){u(function(){i._callLeave(),i._lastRouteResolved={url:l,query:a,hooks:i._defaultHandler.hooks},i._defaultHandler.handler(a)},i._defaultHandler.hooks)},this._genericHooks),!0):(this._notFoundHandler&&u(function(){u(function(){i._callLeave(),i._lastRouteResolved={url:l,query:a,hooks:i._notFoundHandler.hooks},i._notFoundHandler.handler(a)},i._notFoundHandler.hooks)},this._genericHooks),!1))},destroy:function(){this._routes=[],this._destroyed=!0,this._lastRouteResolved=null,this._genericHooks=null,clearTimeout(this._listeningInterval),"undefined"!=typeof window&&(window.removeEventListener("popstate",this._onLocationChange),window.removeEventListener("hashchange",this._onLocationChange))},updatePageLinks:function(){var e=this;"undefined"!=typeof document&&this._findLinks().forEach(function(t){t.hasListenerAttached||(t.addEventListener("click",function(n){if((n.ctrlKey||n.metaKey)&&"a"==n.target.tagName.toLowerCase())return!1;var o=e.getLinkPath(t);e._destroyed||(n.preventDefault(),e.navigate(o.replace(/\/+$/,"").replace(/^\/+/,"/")))}),t.hasListenerAttached=!0)})},generate:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=this._routes.reduce(function(n,o){var i;if(o.name===e)for(i in n=o.route,t)n=n.toString().replace(":"+i,t[i]);return n},"");return this._useHash?this._hash+n:n},link:function(e){return this._getRoot()+e},pause:function(){var e=!(arguments.length>0&&void 0!==arguments[0])||arguments[0];this._paused=e,this._historyAPIUpdateMethod=e?"replaceState":"pushState"},resume:function(){this.pause(!1)},historyAPIUpdateMethod:function(e){return void 0===e?this._historyAPIUpdateMethod:(this._historyAPIUpdateMethod=e,e)},disableIfAPINotAvailable:function(){t()||this.destroy()},lastRouteResolved:function(){return this._lastRouteResolved},getLinkPath:function(e){return e.getAttribute("href")},hooks:function(e){this._genericHooks=e},_add:function(t){var n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null,o=arguments.length>2&&void 0!==arguments[2]?arguments[2]:null;return"string"==typeof t&&(t=encodeURI(t)),this._routes.push("object"===(void 0===n?"undefined":e(n))?{route:t,handler:n.uses,name:n.as,hooks:o||n.hooks}:{route:t,handler:n,hooks:o}),this._add},_getRoot:function(){return null!==this.root?this.root:(this.root=a(this._cLoc().split("?")[0],this._routes),this.root)},_listen:function(){var e=this;if(this._usePushState)window.addEventListener("popstate",this._onLocationChange);else if("undefined"!=typeof window&&"onhashchange"in window)window.addEventListener("hashchange",this._onLocationChange);else{var t=this._cLoc(),n=void 0,o=void 0;(o=function(){n=e._cLoc(),t!==n&&(t=n,e.resolve()),e._listeningInterval=setTimeout(o,200)})()}},_cLoc:function(){return"undefined"!=typeof window?void 0!==window.__NAVIGO_WINDOW_LOCATION_MOCK__?window.__NAVIGO_WINDOW_LOCATION_MOCK__:o(window.location.href):""},_findLinks:function(){return[].slice.call(document.querySelectorAll("[data-navigo]"))},_onLocationChange:function(){this.resolve()},_callLeave:function(){var e=this._lastRouteResolved;e&&e.hooks&&e.hooks.leave&&e.hooks.leave(e.params)}},n.PARAMETER_REGEXP=/([:*])(\w+)/g,n.WILDCARD_REGEXP=/\*/g,n.REPLACE_VARIABLE_REGEXP="([^/]+)",n.REPLACE_WILDCARD="(?:.*)",n.FOLLOWED_BY_SLASH_REGEXP="(?:/$|$)",n.MATCH_REGEXP_FLAGS="",n});
-
-
-},{}],"node_modules/axios/lib/helpers/bind.js":[function(require,module,exports) {
+},{"buffer":"node_modules/buffer/index.js"}],"node_modules/axios/lib/helpers/bind.js":[function(require,module,exports) {
 'use strict';
 
 module.exports = function bind(fn, thisArg) {
@@ -21448,22 +21342,20 @@ router.on({
   "/": function _() {
     return render(state.Home);
   }
-}).resolve();
-
-_axios.default.get("https://jsonplaceholder.typicode.com/posts").then(function (response) {
-  console.log("response.data", response.data);
-  response.data.forEach(function (post) {
-    state.Blog.posts.push(post);
-  });
-  var params = router.lastRouteResolved().params;
-  console.log(params);
-
-  if (params) {
-    render(state[params.page]);
-  }
-}).catch(function (err) {
-  return console.log(err);
-});
+}).resolve(); // axios
+//   .get("https://pokeapi.co/api/v2/pokemon?limit=100&offset=200")
+//   .then((response) => {
+//     console.log("response.data", response.data);
+//     response.data((post) => {
+//       state.Blog.posts.push(post);
+//     });
+//     const params = router.lastRouteResolved().params;
+//     console.log(params);
+//     if (params) {
+//       render(state[params.page]);
+//     }
+//   })
+//   .catch((err) => console.log(err));
 
 function render() {
   var st = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : state.Home;
@@ -21472,33 +21364,603 @@ function render() {
   document.querySelector("#root").innerHTML = "\n  ".concat((0, _components.Header)(st), "\n  ").concat((0, _components.Nav)(state.Links), "\n  ").concat((0, _components.Main)(st), "\n  ").concat((0, _components.Footer)(), "\n");
   router.updatePageLinks();
   addNavEventListeners();
-  addPicOnFormSubmit(st);
 }
 
-function addNavEventListeners() {
-  // add menu toggle to bars icon in nav bar
-  document.querySelector(".fa-bars").addEventListener("click", function () {
-    return document.querySelector("nav > ul").classList.toggle("hidden--mobile");
-  });
+var menuToggle = document.querySelector("#menu-toggle");
+var activeElements = document.querySelectorAll(".active-element");
+var toggledMenu = menuToggle.addEventListener("click", function () {
+  // forEach is not supported in IE11
+  // activeElements.forEach(function(e){
+  //     e.classList.toggle("active");
+  // });
+  for (var activated = 0; activated < activeElements.length; activated++) {
+    activeElements[activated].classList.toggle("active");
+  }
+});
+
+function rand(max) {
+  return Math.floor(Math.random() * max);
 }
 
-function addPicOnFormSubmit(st) {
-  if (st.view === "Form") {
-    document.querySelector("form").addEventListener("submit", function (event) {
-      event.preventDefault(); // convert HTML elements to Array
+function shuffle(a) {
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var _ref = [a[j], a[i]];
+    a[i] = _ref[0];
+    a[j] = _ref[1];
+  }
 
-      var inputList = Array.from(event.target.elements); // remove submit button from list
+  return a;
+}
 
-      inputList.pop(); // construct new picture object
+function changeBrightness(factor, sprite) {
+  var virtCanvas = document.createElement("canvas");
+  virtCanvas.width = 500;
+  virtCanvas.height = 500;
+  var context = virtCanvas.getContext("2d");
+  context.drawImage(sprite, 0, 0, 500, 500);
+  var imgData = context.getImageData(0, 0, 500, 500);
 
-      var newPic = inputList.reduce(function (pictureObject, input) {
-        pictureObject[input.name] = input.value;
-        return pictureObject;
-      }, {}); // add new picture to state.Gallery.pictures
+  for (var i = 0; i < imgData.data.length; i += 4) {
+    imgData.data[i] = imgData.data[i] * factor;
+    imgData.data[i + 1] = imgData.data[i + 1] * factor;
+    imgData.data[i + 2] = imgData.data[i + 2] * factor;
+  }
 
-      state.Gallery.pictures.push(newPic);
-      render(state.Gallery);
+  context.putImageData(imgData, 0, 0);
+  var spriteOutput = new Image();
+  spriteOutput.src = virtCanvas.toDataURL();
+  virtCanvas.remove();
+  return spriteOutput;
+}
+
+function displayVictoryMess(moves) {
+  document.getElementById("moves").innerHTML = "You Moved " + moves + " Steps.";
+  toggleVisablity("Message-Container");
+}
+
+function toggleVisablity(id) {
+  if (document.getElementById(id).style.visibility == "visible") {
+    document.getElementById(id).style.visibility = "hidden";
+  } else {
+    document.getElementById(id).style.visibility = "visible";
+  }
+}
+
+function Maze(Width, Height) {
+  var mazeMap;
+  var width = Width;
+  var height = Height;
+  var startCoord, endCoord;
+  var dirs = ["n", "s", "e", "w"];
+  var modDir = {
+    n: {
+      y: -1,
+      x: 0,
+      o: "s"
+    },
+    s: {
+      y: 1,
+      x: 0,
+      o: "n"
+    },
+    e: {
+      y: 0,
+      x: 1,
+      o: "w"
+    },
+    w: {
+      y: 0,
+      x: -1,
+      o: "e"
+    }
+  };
+
+  this.map = function () {
+    return mazeMap;
+  };
+
+  this.startCoord = function () {
+    return startCoord;
+  };
+
+  this.endCoord = function () {
+    return endCoord;
+  };
+
+  function genMap() {
+    mazeMap = new Array(height);
+
+    for (y = 0; y < height; y++) {
+      mazeMap[y] = new Array(width);
+
+      for (x = 0; x < width; ++x) {
+        mazeMap[y][x] = {
+          n: false,
+          s: false,
+          e: false,
+          w: false,
+          visited: false,
+          priorPos: null
+        };
+      }
+    }
+  }
+
+  function defineMaze() {
+    var isComp = false;
+    var move = false;
+    var cellsVisited = 1;
+    var numLoops = 0;
+    var maxLoops = 0;
+    var pos = {
+      x: 0,
+      y: 0
+    };
+    var numCells = width * height;
+
+    while (!isComp) {
+      move = false;
+      mazeMap[pos.x][pos.y].visited = true;
+
+      if (numLoops >= maxLoops) {
+        shuffle(dirs);
+        maxLoops = Math.round(rand(height / 8));
+        numLoops = 0;
+      }
+
+      numLoops++;
+
+      for (index = 0; index < dirs.length; index++) {
+        var direction = dirs[index];
+        var nx = pos.x + modDir[direction].x;
+        var ny = pos.y + modDir[direction].y;
+
+        if (nx >= 0 && nx < width && ny >= 0 && ny < height) {
+          //Check if the tile is already visited
+          if (!mazeMap[nx][ny].visited) {
+            //Carve through walls from this tile to next
+            mazeMap[pos.x][pos.y][direction] = true;
+            mazeMap[nx][ny][modDir[direction].o] = true; //Set Currentcell as next cells Prior visited
+
+            mazeMap[nx][ny].priorPos = pos; //Update Cell position to newly visited location
+
+            pos = {
+              x: nx,
+              y: ny
+            };
+            cellsVisited++; //Recursively call this method on the next tile
+
+            move = true;
+            break;
+          }
+        }
+      }
+
+      if (!move) {
+        //  If it failed to find a direction,
+        //  move the current position back to the prior cell and Recall the method.
+        pos = mazeMap[pos.x][pos.y].priorPos;
+      }
+
+      if (numCells == cellsVisited) {
+        isComp = true;
+      }
+    }
+  }
+
+  function defineStartEnd() {
+    switch (rand(4)) {
+      case 0:
+        startCoord = {
+          x: 0,
+          y: 0
+        };
+        endCoord = {
+          x: height - 1,
+          y: width - 1
+        };
+        break;
+
+      case 1:
+        startCoord = {
+          x: 0,
+          y: width - 1
+        };
+        endCoord = {
+          x: height - 1,
+          y: 0
+        };
+        break;
+
+      case 2:
+        startCoord = {
+          x: height - 1,
+          y: 0
+        };
+        endCoord = {
+          x: 0,
+          y: width - 1
+        };
+        break;
+
+      case 3:
+        startCoord = {
+          x: height - 1,
+          y: width - 1
+        };
+        endCoord = {
+          x: 0,
+          y: 0
+        };
+        break;
+    }
+  }
+
+  genMap();
+  defineStartEnd();
+  defineMaze();
+}
+
+function DrawMaze(Maze, ctx, cellsize) {
+  var endSprite = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+  var map = Maze.map();
+  var cellSize = cellsize;
+  var drawEndMethod;
+  ctx.lineWidth = cellSize / 40;
+
+  this.redrawMaze = function (size) {
+    cellSize = size;
+    ctx.lineWidth = cellSize / 50;
+    drawMap();
+    drawEndMethod();
+  };
+
+  function drawCell(xCord, yCord, cell) {
+    var x = xCord * cellSize;
+    var y = yCord * cellSize;
+
+    if (cell.n == false) {
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(x + cellSize, y);
+      ctx.stroke();
+    }
+
+    if (cell.s === false) {
+      ctx.beginPath();
+      ctx.moveTo(x, y + cellSize);
+      ctx.lineTo(x + cellSize, y + cellSize);
+      ctx.stroke();
+    }
+
+    if (cell.e === false) {
+      ctx.beginPath();
+      ctx.moveTo(x + cellSize, y);
+      ctx.lineTo(x + cellSize, y + cellSize);
+      ctx.stroke();
+    }
+
+    if (cell.w === false) {
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(x, y + cellSize);
+      ctx.stroke();
+    }
+  }
+
+  function drawMap() {
+    for (x = 0; x < map.length; x++) {
+      for (y = 0; y < map[x].length; y++) {
+        drawCell(x, y, map[x][y]);
+      }
+    }
+  }
+
+  function drawEndFlag() {
+    var coord = Maze.endCoord();
+    var gridSize = 4;
+    var fraction = cellSize / gridSize - 2;
+    var colorSwap = true;
+
+    for (var _y = 0; _y < gridSize; _y++) {
+      if (gridSize % 2 == 0) {
+        colorSwap = !colorSwap;
+      }
+
+      for (var _x = 0; _x < gridSize; _x++) {
+        ctx.beginPath();
+        ctx.rect(coord.x * cellSize + _x * fraction + 4.5, coord.y * cellSize + _y * fraction + 4.5, fraction, fraction);
+
+        if (colorSwap) {
+          ctx.fillStyle = "rgba(0, 0, 0, 0.8)";
+        } else {
+          ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+        }
+
+        ctx.fill();
+        colorSwap = !colorSwap;
+      }
+    }
+  }
+
+  function drawEndSprite() {
+    var offsetLeft = cellSize / 50;
+    var offsetRight = cellSize / 25;
+    var coord = Maze.endCoord();
+    ctx.drawImage(endSprite, 2, 2, endSprite.width, endSprite.height, coord.x * cellSize + offsetLeft, coord.y * cellSize + offsetLeft, cellSize - offsetRight, cellSize - offsetRight);
+  }
+
+  function clear() {
+    var canvasSize = cellSize * map.length;
+    ctx.clearRect(0, 0, canvasSize, canvasSize);
+  }
+
+  if (endSprite != null) {
+    drawEndMethod = drawEndSprite;
+  } else {
+    drawEndMethod = drawEndFlag;
+  }
+
+  clear();
+  drawMap();
+  drawEndMethod();
+}
+
+function Player(maze, c, _cellsize, onComplete) {
+  var sprite = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : null;
+  var ctx = c.getContext("2d");
+  var drawSprite;
+  var moves = 0;
+  drawSprite = drawSpriteCircle;
+
+  if (sprite != null) {
+    drawSprite = drawSpriteImg;
+  }
+
+  var player = this;
+  var map = maze.map();
+  var cellCoords = {
+    x: maze.startCoord().x,
+    y: maze.startCoord().y
+  };
+  var cellSize = _cellsize;
+  var halfCellSize = cellSize / 2;
+
+  this.redrawPlayer = function (_cellsize) {
+    cellSize = _cellsize;
+    drawSpriteImg(cellCoords);
+  };
+
+  function drawSpriteCircle(coord) {
+    ctx.beginPath();
+    ctx.fillStyle = "yellow";
+    ctx.arc((coord.x + 1) * cellSize - halfCellSize, (coord.y + 1) * cellSize - halfCellSize, halfCellSize - 2, 0, 2 * Math.PI);
+    ctx.fill();
+
+    if (coord.x === maze.endCoord().x && coord.y === maze.endCoord().y) {
+      onComplete(moves);
+      player.unbindKeyDown();
+    }
+  }
+
+  function drawSpriteImg(coord) {
+    var offsetLeft = cellSize / 50;
+    var offsetRight = cellSize / 25;
+    ctx.drawImage(sprite, 0, 0, sprite.width, sprite.height, coord.x * cellSize + offsetLeft, coord.y * cellSize + offsetLeft, cellSize - offsetRight, cellSize - offsetRight);
+
+    if (coord.x === maze.endCoord().x && coord.y === maze.endCoord().y) {
+      onComplete(moves);
+      player.unbindKeyDown();
+    }
+  }
+
+  function removeSprite(coord) {
+    var offsetLeft = cellSize / 50;
+    var offsetRight = cellSize / 25;
+    ctx.clearRect(coord.x * cellSize + offsetLeft, coord.y * cellSize + offsetLeft, cellSize - offsetRight, cellSize - offsetRight);
+  }
+
+  function check(e) {
+    var cell = map[cellCoords.x][cellCoords.y];
+    moves++;
+
+    switch (e.keyCode) {
+      case 65:
+      case 37:
+        // west
+        if (cell.w == true) {
+          removeSprite(cellCoords);
+          cellCoords = {
+            x: cellCoords.x - 1,
+            y: cellCoords.y
+          };
+          drawSprite(cellCoords);
+        }
+
+        break;
+
+      case 87:
+      case 38:
+        // north
+        if (cell.n == true) {
+          removeSprite(cellCoords);
+          cellCoords = {
+            x: cellCoords.x,
+            y: cellCoords.y - 1
+          };
+          drawSprite(cellCoords);
+        }
+
+        break;
+
+      case 68:
+      case 39:
+        // east
+        if (cell.e == true) {
+          removeSprite(cellCoords);
+          cellCoords = {
+            x: cellCoords.x + 1,
+            y: cellCoords.y
+          };
+          drawSprite(cellCoords);
+        }
+
+        break;
+
+      case 83:
+      case 40:
+        // south
+        if (cell.s == true) {
+          removeSprite(cellCoords);
+          cellCoords = {
+            x: cellCoords.x,
+            y: cellCoords.y + 1
+          };
+          drawSprite(cellCoords);
+        }
+
+        break;
+    }
+  }
+
+  this.bindKeyDown = function () {
+    window.addEventListener("keydown", check, false);
+    $("#view").swipe({
+      swipe: function swipe(event, direction, distance, duration, fingerCount, fingerData) {
+        console.log(direction);
+
+        switch (direction) {
+          case "up":
+            check({
+              keyCode: 38
+            });
+            break;
+
+          case "down":
+            check({
+              keyCode: 40
+            });
+            break;
+
+          case "left":
+            check({
+              keyCode: 37
+            });
+            break;
+
+          case "right":
+            check({
+              keyCode: 39
+            });
+            break;
+        }
+      },
+      threshold: 0
     });
+  };
+
+  this.unbindKeyDown = function () {
+    window.removeEventListener("keydown", check, false);
+    $("#view").swipe("destroy");
+  };
+
+  drawSprite(maze.startCoord());
+  this.bindKeyDown();
+}
+
+var mazeCanvas = document.getElementById("mazeCanvas");
+var ctx = mazeCanvas.getContext("2d");
+var sprite;
+var finishSprite;
+var maze, draw, player;
+var cellSize;
+var difficulty; // sprite.src = 'media/sprite.png';
+
+window.onload = function () {
+  var viewWidth = $("#view").width();
+  var viewHeight = $("#view").height();
+
+  if (viewHeight < viewWidth) {
+    ctx.canvas.width = viewHeight - viewHeight / 100;
+    ctx.canvas.height = viewHeight - viewHeight / 100;
+  } else {
+    ctx.canvas.width = viewWidth - viewWidth / 100;
+    ctx.canvas.height = viewWidth - viewWidth / 100;
+  } //Load and edit sprites
+
+
+  var completeOne = false;
+  var completeTwo = false;
+
+  var isComplete = function isComplete() {
+    if (completeOne === true && completeTwo === true) {
+      console.log("Runs");
+      setTimeout(function () {
+        makeMaze();
+      }, 500);
+    }
+  };
+
+  sprite = new Image();
+  sprite.src = "" + "?" + new Date().getTime();
+  sprite.setAttribute("crossOrigin", " ");
+
+  sprite.onload = function () {
+    sprite = changeBrightness(1.2, sprite);
+    completeOne = true;
+    console.log(completeOne);
+    isComplete();
+  };
+
+  finishSprite = new Image();
+  finishSprite.src = "" + "?" + new Date().getTime();
+  finishSprite.setAttribute("crossOrigin", " ");
+
+  finishSprite.onload = function () {
+    finishSprite = changeBrightness(1.1, finishSprite);
+    completeTwo = true;
+    console.log(completeTwo);
+    isComplete();
+  };
+};
+
+window.onresize = function () {
+  var viewWidth = $("#view").width();
+  var viewHeight = $("#view").height();
+
+  if (viewHeight < viewWidth) {
+    ctx.canvas.width = viewHeight - viewHeight / 100;
+    ctx.canvas.height = viewHeight - viewHeight / 100;
+  } else {
+    ctx.canvas.width = viewWidth - viewWidth / 100;
+    ctx.canvas.height = viewWidth - viewWidth / 100;
+  }
+
+  cellSize = mazeCanvas.width / difficulty;
+
+  if (player != null) {
+    draw.redrawMaze(cellSize);
+    player.redrawPlayer(cellSize);
+  }
+};
+
+function makeMaze() {
+  //document.getElementById("mazeCanvas").classList.add("border");
+  if (player != undefined) {
+    player.unbindKeyDown();
+    player = null;
+  }
+
+  var e = document.getElementById("diffSelect");
+  difficulty = e.options[e.selectedIndex].value;
+  cellSize = mazeCanvas.width / difficulty;
+  maze = new Maze(difficulty, difficulty);
+  draw = new DrawMaze(maze, ctx, cellSize, finishSprite);
+  player = new Player(maze, mazeCanvas, cellSize, displayVictoryMess, sprite);
+
+  if (document.getElementById("mazeContainer").style.opacity < "100") {
+    document.getElementById("mazeContainer").style.opacity = "100";
   }
 }
 },{"./components":"components/index.js","./store":"store/index.js","navigo":"node_modules/navigo/lib/navigo.min.js","lodash":"node_modules/lodash/lodash.js","axios":"node_modules/axios/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -21529,7 +21991,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51960" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50326" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

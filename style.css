@@ -1,6 +1,6 @@
-
 #jumbotron {
-  background: url(https://raw.githubusercontent.com/lkye12/capstone/f5781e79e5193c83d42d2979474f484425511240/img/background.svg) center center no-repeat;
+  background: black
+    center center no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -14,224 +14,350 @@
   text-align: center;
 }
 
+.about {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none; /* Styled in normalize.css */
+  text-decoration: none;
+  color: #ccc;
+}
 
+body {
+  background-color: rgb(50, 101, 134);
+}
 
-form {
-  border: solid 1px black;
+.wrapper {
   display: flex;
   flex-direction: column;
-  margin: 1rem 1rem;
+  height: 100vh;
+  margin: 0 auto;
+  max-width: 1550px;
+  padding-top: 0.5rem;
+  width: 93%;
 }
 
-form > * {
-  margin: 0.5rem;
+.section-header a {
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
 }
 
-form > input[type="submit"] {
-  width: 40%;
-  margin: 0.5rem;
-  margin-right: auto;
+.masthead {
+  /* Both of these are needed to keep the #menu-toggle visible when nav list is active / open. */
+  position: relative;
+  z-index: 1000;
+  /********************************/
+  top: 0;
+  left: 0;
+  width: 100%;
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
 }
 
-footer {
-  border-top: solid 1px black;
-  padding: 2rem 2rem 4rem;
-  margin: 1rem 1rem;
-  clear: both;
+.masthead h1 {
+  transition-delay: 450ms;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  width: 55px;
+  z-index: 3;
+}
+
+.menu-toggle div {
+  background-color: #ccc;
+  border-radius: 25px;
+  box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.3);
+  height: 7px;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.13, 0.24, 0.35, 1.64);
+}
+
+.menu-toggle .one,
+.menu-toggle .two {
+  margin-bottom: 7px;
+}
+
+.about-contents {
+  flex: auto;
+}
+
+.about-contents h2 {
+  letter-spacing: 1.5px;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+.about-contents p {
+  font-size: 1.1rem;
+  letter-spacing: 1.7px;
+  line-height: 1.35;
+  color: #ccc;
+  transition-delay: 150ms;
+  transition-duration: 850ms;
 }
 
 
 
-#gallery {
-  border: solid 1px black;
-  clear: both;
+
+
+/************* Style and animate the nav overlay ***********************/
+.section-nav-list::before,
+.section-nav-list::after {
+  background-color: #b94071;
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 0vw;
+  transition: all 100ms ease-in-out 300ms;
 }
 
-#gallery > * {
-  padding: 0.5rem;
+.section-nav-list::before {
+  left: 0;
+}
+.section-nav-list::after {
+  right: 0;
 }
 
-#gallery img {
+.section-nav-list ul {
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  z-index: 2000;
+}
+
+.section-nav-list a {
   display: block;
-  height: auto;
-  width: 92.5%;
-  margin: auto;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  opacity: 0;
+  text-align: center;
+  text-transform: uppercase;
+  transition-delay: 130ms;
 }
 
-.blog-post {
-  margin: 1rem 4rem;
+.section-nav-list .mobile-hide {
+  /** Hide the link when viewing site on mobile devices. **/
+  display: none;
 }
 
-@media (max-width: 549px) {
-  .hidden--mobile {
-    display: none !important;
-  }
-
-  nav {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  nav > i {
-    padding: 1rem;
-    font-size: 2em;
-  }
-
-  nav > ul {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 0 0;
-  }
-
-  nav > ul > li {
-    padding: 0.5rem;
-    list-style-type: none;
-  }
-
-  #about .wrap {
-    margin-top: 90px;
-  }
-  #about {
-    background: url("https://raw.githubusercontent.com/lkye12/capstone/f5781e79e5193c83d42d2979474f484425511240/img/Bio.svg");
-    background-size: cover;
-  }
-  #about .clear {
-    clear: both;
-  }
-  #about .wrap {
-    background-color: rgb(200, 200, 200);
-    background-color: rgba(200, 200, 200, 0.5);
-    border-radius: 20px;
-    padding: 20px;
-    margin: 40px auto;
-    width: 70%;
-  }
-  #about .container{
-    max-width:1040px;
-    border:1px solid pink;
-    margin:0 auto;
+/************* Style the nav elements when active. ***********************/
+.masthead.active h1 {
+  text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
 }
-#about{
-    border:1px solid black;
-    min-height: 500px;
-    background-color:coral
+
+.menu-toggle.active .one {
+  box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.4);
+  transform: translate(0, 14px) rotate(45deg);
 }
-  #gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+
+.menu-toggle.active .two {
+  background-color: transparent;
+  box-shadow: none;
+  transform: translateX(-55px);
 }
-/*body*/
+
+.menu-toggle.active .three {
+  box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.4);
+  transform: translate(0, -14px) rotate(-45deg);
+}
+
+.section-nav-list.active::before,
+.section-nav-list.active::after {
+  width: 25vw;
+  /*     transition-duration: 1000ms; */
+}
+.section-nav-list.active ul {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition-delay: 560ms;
+  transition-duration: 240ms;
+  transition-timing-function: cubic-bezier(0.1, 0.2, 0.3, 1.4);
+}
+
+.section-nav-list.active a {
+  transition-delay: 600ms;
+  opacity: 1;
+}
+
+
+.wrapper.active p {
+  color: rgb(50, 101, 134);
+  transition-delay: 150ms;
+  transition-duration: 350ms;
+}
+
+
+
+$menuHeight: 65px+10px;
+@mixin transition {
+  transition-property: background-color opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+/* html,
 body {
-  margin: 0%;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  background-color: gray;
-  text-decoration-color: coral;
-}
-/*end body*/
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+} */
 
-@media (min-width: 550px) {
-  #nav {
-    background: blue;
-    padding: 0 2rem;
-    height: 0rem;
-    min-height: 10vh;
-    overflow: hidden;
-    transition: height 1s ease-in-out;
-  }
+#mazeContainer {
+  transition-property: opacity;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  top: $menuHeight;
+  opacity: 0;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: auto;
 
-  #nav .nav-menu {
-    justify-content: space-between;
-  }
-
-  #nav .toggle-collapse {
-    position: absolute;
-    top: 0%;
-    width: 90%;
-    cursor: pointer;
-    display: none;
-  }
-
-  #nav .toggle-collapse .toggle-icons {
-    display: flex;
-    justify-content: flex-end;
-    padding: 1.7rem 0;
-  }
-
-  #nav .toggle-collapse .toggle-icons i {
-    font-size: 1.4rem;
-    color: var(--text-black);
-  }
-
-  .collapse {
-    height: 30rem;
-  }
-
-  #nav .nav-bar {
-    display: flex;
+#mazeCanvas {
     margin: 0;
-  }
-
-  #nav .nav-bar li {
-    padding: 1.6rem 1rem;
-    font-size: 1.1rem;
-    position: relative;
-    font-family: var(--Abel);
-    font-size: 1.1rem;
-  }
-
-  #nav .nav-bar li:hover {
-    background-color: var(--midnight);
-  }
-
-  #nav .nav-bar li:hover a {
-
-  }
-
-  #nav .brand a {
-    font-size: 1.6rem;
-    padding: 1rem 0;
     display: block;
-    font-family: var(--Lexend);
-    font-size: 1.6rem;
+    border: solid 1px black;
   }
+}
 
-  /* -------x------- navbar ---------x------- */
-  nav > ul {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 0 0;
+input,
+select {
+  @include transition;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 45px;
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  appearance: none;
+&:hover {
+    background-color: rgba(0, 0, 0, 0.7);
   }
-
-  nav > ul > li {
-    display: flex;
-    text-decoration: none;
-    border: none;
-    padding: 0.5rem 0.5rem;
-    border-radius: 25px;
-    color: var(--white);
+&:active {
+    background-color: black;
   }
-  nav > ul > li:hover {
-    background-color: var(--midnight);
-
+&:focus {
+    outline: none;
   }
+}
 
-  nav > .fa-bars {
-    display: none;
+.custom-select {
+  display: inline-block;
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: 125px center;
   }
+}
 
-  #bio {
-    margin-right: 3rem;
+#Message-Container {
+  visibility: hidden;
+  color: white;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  #message {
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
   }
+}
 
+#page {
+  font-family: "Segoe UI", Arial, sans-serif;
+  text-align: center;
+  height: auto;
+  width: auto;
+  margin: auto;
+  #menu {
+    margin: auto;
+    padding: 10px;
+    height: 65px;
+    box-sizing: border-box;
+    h1 {
+      margin: 0;
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 3.2rem;
+    }
+  }
+  #view {
+    position: absolute;
+    top: 65px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+  }
+}
 
-  #gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
-    background-color: white;
+.border {
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+#gradient {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  color: #fff;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: Gradient 15s ease infinite;
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 400px) {
+  input,
+  select {
+    width: 120px;
   }
 }
